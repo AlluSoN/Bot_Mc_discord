@@ -95,6 +95,7 @@ async def on_ready():
     print('------')
     chdir("D:\Minecraft_server\mcrcon")
     startfile("launch_list.bat")
+    await asyncio.sleep(1)
     await write_list(bot, False)
     LastUpdateTime = datetime.now()
     if IsServerOn:
@@ -123,6 +124,7 @@ async def get_list(ctx, command="not"):
         if (datetime.now() - LastUpdateTime).seconds > 5:
             chdir("D:\Minecraft_server\mcrcon")
             startfile("launch_list.bat")
+            await asyncio.sleep(1)
             await write_list(ctx)
             LastUpdateTime = datetime.now()
         else:
